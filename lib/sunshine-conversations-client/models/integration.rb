@@ -22,13 +22,16 @@ module SunshineConversationsClient
     # A human-friendly name used to identify the integration.
     attr_accessor :display_name
 
+    attr_accessor :brand_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'type' => :'type',
         :'status' => :'status',
-        :'display_name' => :'displayName'
+        :'display_name' => :'displayName',
+        :'brand_id' => :'brandId'
       }
     end
 
@@ -38,7 +41,8 @@ module SunshineConversationsClient
         :'id' => :'String',
         :'type' => :'String',
         :'status' => :'Status',
-        :'display_name' => :'String'
+        :'display_name' => :'String',
+        :'brandId' => :'String'
       }
     end
 
@@ -232,7 +236,7 @@ module SunshineConversationsClient
           is_nullable = self.class.openapi_nullable.include?(attr)
           next if !is_nullable || (is_nullable && !instance_variable_defined?(:"@#{attr}"))
         end
-        
+
         hash[param] = _to_hash(value)
       end
       hash
