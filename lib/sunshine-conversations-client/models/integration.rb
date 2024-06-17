@@ -42,7 +42,7 @@ module SunshineConversationsClient
         :'type' => :'String',
         :'status' => :'Status',
         :'display_name' => :'String',
-        :'brandId' => :'String'
+        :'brand_id' => :'String'
       }
     end
 
