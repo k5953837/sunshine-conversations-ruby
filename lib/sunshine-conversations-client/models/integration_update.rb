@@ -89,7 +89,7 @@ module SunshineConversationsClient
     # A background image url for the conversation. Image will be tiled to fit the window.
     attr_accessor :background_image_url
 
-    # A list of origins to whitelist. When set, only the origins from this list will be able to initialize the Web Messenger. If unset, all origins are whitelisted. The elements in the list should follow the serialized-origin format from RFC 6454: scheme \"://\" host [ \":\" port ], where scheme is http or https. 
+    # A list of origins to whitelist. When set, only the origins from this list will be able to initialize the Web Messenger. If unset, all origins are whitelisted. The elements in the list should follow the serialized-origin format from RFC 6454: scheme \"://\" host [ \":\" port ], where scheme is http or https.
     attr_accessor :origin_whitelist
 
     # Object whose properties can be set to specify the add-on’s options. See the [guide](https://docs.smooch.io/guide/web-messenger/#prechat-capture) to learn more about Prechat Capture.
@@ -103,6 +103,9 @@ module SunshineConversationsClient
 
     # An access token associated with the accountId used to query the WhatsApp Account Management API. In combination with accountId, it’s used for Message Template Reconstruction.
     attr_accessor :account_management_access_token
+
+    # The default responder for the integration.
+    attr_accessor :default_responder_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -137,7 +140,8 @@ module SunshineConversationsClient
         :'prechat_capture' => :'prechatCapture',
         :'hsm_fallback_language' => :'hsmFallbackLanguage',
         :'account_id' => :'accountId',
-        :'account_management_access_token' => :'accountManagementAccessToken'
+        :'account_management_access_token' => :'accountManagementAccessToken',
+        :'default_responder_id' => :'defaultResponderId'
       }
     end
 
@@ -174,7 +178,8 @@ module SunshineConversationsClient
         :'prechat_capture' => :'PrechatCapture',
         :'hsm_fallback_language' => :'String',
         :'account_id' => :'String',
-        :'account_management_access_token' => :'String'
+        :'account_management_access_token' => :'String',
+        :'default_responder_id' => :'String'
       }
     end
 
@@ -194,7 +199,8 @@ module SunshineConversationsClient
         :'origin_whitelist',
         :'hsm_fallback_language',
         :'account_id',
-        :'account_management_access_token'
+        :'account_management_access_token',
+        :'default_responder_id'
       ])
     end
 
@@ -371,6 +377,10 @@ module SunshineConversationsClient
 
       if attributes.key?(:'account_management_access_token')
         self.account_management_access_token = attributes[:'account_management_access_token']
+      end
+
+      if attributes.key?(:'default_responder_id')
+        self.default_responder_id = attributes[:'default_responder_id']
       end
     end
 
@@ -672,7 +682,7 @@ module SunshineConversationsClient
           is_nullable = self.class.openapi_nullable.include?(attr)
           next if !is_nullable || (is_nullable && !instance_variable_defined?(:"@#{attr}"))
         end
-        
+
         hash[param] = _to_hash(value)
       end
       hash
