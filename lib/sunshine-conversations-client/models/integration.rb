@@ -46,7 +46,7 @@ module SunshineConversationsClient
         :'status' => :'Status',
         :'display_name' => :'String',
         :'brand_id' => :'String',
-        :'default_responder' => :'String'
+        :'default_responder' => :'Hash<String, String>'
       }
     end
 
