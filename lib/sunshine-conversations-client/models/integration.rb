@@ -24,6 +24,8 @@ module SunshineConversationsClient
 
     attr_accessor :brand_id
 
+    attr_accessor :default_responder
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -31,7 +33,8 @@ module SunshineConversationsClient
         :'type' => :'type',
         :'status' => :'status',
         :'display_name' => :'displayName',
-        :'brand_id' => :'brandId'
+        :'brand_id' => :'brandId',
+        :'default_responder' => :'defaultResponder'
       }
     end
 
@@ -42,7 +45,8 @@ module SunshineConversationsClient
         :'type' => :'String',
         :'status' => :'Status',
         :'display_name' => :'String',
-        :'brand_id' => :'String'
+        :'brand_id' => :'String',
+        :'default_responder' => :'String'
       }
     end
 
